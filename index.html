@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DFE6G8NFJL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-DFE6G8NFJL");</script>
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zax1mqw6id");</script>
 <title>Trại Nấm Xuân Niên</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap">
 <style>
@@ -588,7 +591,7 @@ h1,h2,h3{text-wrap:balance}
     var place = ($("#f-place").value || "").trim();
     var who = name ? ("Mình là " + name + ", phía mình là " + role + ".") : ("Phía mình là " + role + ".");
     var need = "Mình muốn hỏi giá " + product + (qty ? ", số lượng dự kiến " + qty + " mỗi lần" : "") + (place ? ", nhận hàng tại " + place : "") + ".";
-    return "Chào Trại Nấm Xuân Niên. " + who + "\n" + need + "\nNhờ trại báo giá và cách giao hàng giúp mình. Cảm ơn trại.";
+    return "(Từ website) Chào Trại Nấm Xuân Niên. " + who + "\n" + need + "\nNhờ trại báo giá và cách giao hàng giúp mình. Cảm ơn trại.";
   }
 
   var vids = [].slice.call(document.querySelectorAll("video[data-clip]"));
@@ -650,6 +653,29 @@ h1,h2,h3{text-wrap:balance}
   $("#copy-msg").addEventListener("click", function () {
     var out = $("#msg-out");
     copyText(out.value, this, out);
+  });
+})();
+</script>
+
+<script>
+(function () {
+  function ev(n, p) { try { if (window.gtag) gtag("event", n, p || {}); } catch (e) {} }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a,button");
+    if (!a) return;
+    var h = a.getAttribute("href") || "";
+    var sec = a.closest("section");
+    var where = sec ? (sec.id || "khac") : "dau-trang";
+    if (h.indexOf("zalo.me") > -1) ev("click_zalo", { vi_tri: where });
+    else if (h === "#bao-gia") ev("click_hoi_gia", { san_pham: a.getAttribute("data-product") || "chung", vi_tri: where });
+    else if (h.indexOf("facebook.com") > -1) ev("click_facebook", { vi_tri: where });
+    else if (a.id === "copy-msg") ev("sao_chep_tin_nhan");
+    else if (a.classList.contains("copy")) ev("sao_chep_thong_tin");
+  }, true);
+  var f = document.getElementById("bao-gia");
+  if (f) f.addEventListener("submit", function () {
+    var s = document.getElementById("f-product");
+    ev("tao_tin_nhan", { san_pham: s ? s.value : "" });
   });
 })();
 </script>

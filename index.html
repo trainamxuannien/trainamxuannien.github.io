@@ -232,7 +232,7 @@ h1,h2,h3{text-wrap:balance}
       <a class="link" href="#nam-meo">Nấm mèo</a>
       <a class="link" href="#trong-trai">Trong trại</a>
       <a class="link" href="#lien-he">Liên hệ</a>
-      <a class="btn btn-solid btn-sm" href="https://zalo.me/0779022221" target="_blank" rel="noopener">Nhắn Zalo</a>
+      <a class="btn btn-solid btn-sm" href="https://zalo.me/0707923486" target="_blank" rel="noopener">Nhắn Zalo</a>
     </nav>
   </div>
 </header>
@@ -245,7 +245,7 @@ h1,h2,h3{text-wrap:balance}
         <h1 id="h-hero">Trại Nấm Xuân Niên</h1>
         <p class="lead">Nấm bào ngư xám tươi từ trại ở Bảo Lộc, có thêm nấm mèo khô. Nhận đơn cho nhà hàng chay, chợ đầu mối và siêu thị.</p>
         <div class="cta">
-          <a class="btn btn-cream" href="https://zalo.me/0779022221" target="_blank" rel="noopener">Nhắn Zalo</a>
+          <a class="btn btn-cream" href="https://zalo.me/0707923486" target="_blank" rel="noopener">Nhắn Zalo</a>
           <a class="btn btn-ghost-moss" href="#bao-gia">Xin báo giá</a>
         </div>
         <p class="addr">147B Thi Sách, Bảo Lộc, Lâm Đồng</p>
@@ -453,7 +453,7 @@ h1,h2,h3{text-wrap:balance}
           </div>
           <div class="fact">
             <dt>Điện thoại</dt>
-            <dd><span>0779022221</span><button class="copy" type="button" data-copy="0779022221">Sao chép</button></dd>
+            <dd><span>0707923486</span><button class="copy" type="button" data-copy="0707923486">Sao chép</button></dd>
           </div>
           <div class="fact">
             <dt>Email</dt>
@@ -461,7 +461,8 @@ h1,h2,h3{text-wrap:balance}
           </div>
         </dl>
         <div class="links">
-          <a class="btn btn-solid" href="https://zalo.me/0779022221" target="_blank" rel="noopener">Nhắn Zalo</a>
+          <a class="btn btn-solid" href="https://zalo.me/0707923486" target="_blank" rel="noopener">Nhắn Zalo</a>
+          <a class="btn btn-line" href="tel:0707923486">Gọi điện</a>
           <a class="btn btn-line" href="https://m.me/61594124998745" target="_blank" rel="noopener">Nhắn Messenger</a>
           <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=147B%20Thi%20S%C3%A1ch%2C%20B%E1%BA%A3o%20L%E1%BB%99c%2C%20L%C3%A2m%20%C4%90%E1%BB%93ng" target="_blank" rel="noopener">Mở bản đồ</a>
         </div>
@@ -508,7 +509,7 @@ h1,h2,h3{text-wrap:balance}
           <textarea id="msg-out" readonly></textarea>
           <div class="row">
             <button class="btn btn-line btn-sm" type="button" id="copy-msg">Sao chép tin nhắn</button>
-            <a class="btn btn-solid btn-sm" href="https://zalo.me/0779022221" target="_blank" rel="noopener">Mở Zalo</a>
+            <a class="btn btn-solid btn-sm" href="https://zalo.me/0707923486" target="_blank" rel="noopener">Mở Zalo</a>
           </div>
           <p class="hint">Trang này chưa tự gửi tin. Hãy sao chép tin nhắn rồi dán vào Zalo hoặc Messenger của trại.</p>
         </div>
@@ -669,6 +670,7 @@ h1,h2,h3{text-wrap:balance}
     if (h.indexOf("zalo.me") > -1) ev("click_zalo", { vi_tri: where });
     else if (h === "#bao-gia") ev("click_hoi_gia", { san_pham: a.getAttribute("data-product") || "chung", vi_tri: where });
     else if (h.indexOf("facebook.com") > -1) ev("click_facebook", { vi_tri: where });
+    else if (h.indexOf("tel:") === 0) ev("click_goi", { vi_tri: where });
     else if (a.id === "copy-msg") ev("sao_chep_tin_nhan");
     else if (a.classList.contains("copy")) ev("sao_chep_thong_tin");
   }, true);
